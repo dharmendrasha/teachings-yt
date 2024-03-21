@@ -1,0 +1,15 @@
+version: "3.4"
+
+services:
+  jupyter:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    user: root
+    environment:
+      - GRANT_SUDO=yes
+      - RESTARTABLE=yes
+    ports:
+      - 8888:8888
+    volumes:
+      - ./scripts:/home/jovyan/work
