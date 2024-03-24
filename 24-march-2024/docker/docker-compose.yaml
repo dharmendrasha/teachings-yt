@@ -1,0 +1,16 @@
+version: 3.*
+
+volumes:
+  backend_pers:
+
+services:
+  node_backend:
+    build: .
+    environment:
+      - PORT=5005
+    env_file:
+      - .env
+    volumes:
+      - ./src:/app/src
+    ports:
+      - 3005:3000
